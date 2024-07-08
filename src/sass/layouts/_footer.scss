@@ -1,0 +1,231 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-details-block {
+    background: #676F54;
+
+
+    &__content-area {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 92px 0;
+    }
+
+}
+
+.footer-contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    max-width: 292px;
+}
+
+.footer-logo-box {
+    width: 159px;
+
+    &__logo {
+        width: 100%;
+    }
+}
+
+.contact-details-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+
+    &__item {
+        color: #D3D3D3;
+
+        /* Lato/Body: Regular */
+        font-family: "Lato";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    &__icon {
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+    }
+
+    &__text {}
+}
+
+.footer-social-media-handles {
+    display: flex;
+    width: 155px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media-icon {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    border-radius: 100px;
+    background: #F7FBFA;
+
+    color: #716565;
+}
+
+.footer-usefull-links {
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    &__title {
+        color: #D3D3D3;
+
+        /* Lato/Body: Bold */
+        font-family: "Lato";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+
+    &__item {
+        color: #D3D3D3;
+
+        /* Lato/Body: Regular */
+        font-family: "Lato";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__link {}
+}
+
+.footer-newsletter-container {
+    display: flex;
+    max-width: 474px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    &__title {
+        color: #F7FBFA;
+
+        /* Lato/Subheading: Bold */
+        font-family: "Lato";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 8px;
+    }
+
+    &__desc {
+        color: #D3D3D3;
+        font-family: "Lato";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        /* 24px */
+
+        margin-bottom: 48px;
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+
+    }
+
+    &__input {
+        border: none;
+        border-radius: 4px 0px 0px 4px;
+        border-right: 0.5px solid #C3C3C3;
+        background: #F7FBFA;
+        width: 100%;
+
+        color: #C3C3C3;
+
+        /* Lato/Body: Regular */
+        font-family: "Lato";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        height: 100%;
+        outline: none;
+        padding: 0 16px;
+
+    }
+
+    &__submit {
+        display: flex;
+        padding: 12px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        border-radius: 0px 4px 4px 0px;
+        background: #BDE4A8;
+        border: none;
+    }
+
+}
+
+
+
+.footer-copyright-block {
+
+    background: #BDE4A8;
+
+    &__content-area {
+        display: flex;
+        padding: 13px 0px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+}
+
+.copyright-text {
+    color: var(--Text, #1F1919);
+
+    /* Analogue Reduced/16px: 55 Regular */
+    font-family: "Lato";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

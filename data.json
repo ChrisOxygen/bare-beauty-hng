@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Cosrx Oil Free Birch Sap Moisturizer",
+    "normal_price": 62.5,
+    "sale_price": 12.5,
+    "image": "cosrx_oil_free_birch_sap.png",
+    "brand": "Cosrx",
+    "ingredients": ["Birch Sap", "Hyaluronic acid"],
+    "skin_concerns": ["Dry Skin", "Wrinkles"],
+    "soldCount": 18
+  },
+  {
+    "name": "La Roche Posay Double Repair Moisturizer",
+    "normal_price": 95.8,
+    "sale_price": 19.16,
+    "image": "la_roche_posay_double_repair.png",
+    "brand": "La Roche Posay",
+    "ingredients": ["Niacinamide", "Ceramides", "Glycerin"],
+    "skin_concerns": ["Acne", "Dry Skin"],
+    "soldCount": 27
+  },
+  {
+    "name": "Minon Amino moist charge Moisturizer",
+    "normal_price": 74.2,
+    "sale_price": 14.84,
+    "image": "minon_amino_moist_charge.png",
+    "brand": "Minon",
+    "ingredients": ["Hyaluronic acid", "Propolis"],
+    "skin_concerns": ["Hyperpigmentation", "Dry Skin"],
+    "soldCount": 12
+  },
+  {
+    "name": "Labiotte Hyalbiome Water Cream 1.7 Fl Oz",
+    "normal_price": 41.6,
+    "sale_price": 8.32,
+    "image": "labiotte_hyalbiome_water_cream.png",
+    "brand": "Labiotte",
+    "ingredients": ["Hyaluronic acid", "Green Tea"],
+    "skin_concerns": ["Acne", "Wrinkles"],
+    "soldCount": 5
+  },
+  {
+    "name": "Snail Mucin Moisturizer Face Cream",
+    "normal_price": 83.7,
+    "sale_price": 16.74,
+    "image": "snail_mucin_moisturizer.png",
+    "brand": "Cosrx",
+    "ingredients": ["Snail Mucin", "Vitamin C"],
+    "skin_concerns": ["Acne", "Hyperpigmentation"],
+    "soldCount": 23
+  },
+  {
+    "name": "Troubless Hydro Soothing Face Cream",
+    "normal_price": 59.2,
+    "sale_price": 11.84,
+    "image": "troubless_hydro_soothing.png",
+    "brand": "Acwell",
+    "ingredients": ["Centella Asiatica", "Propolis"],
+    "skin_concerns": ["Acne", "Dry Skin"],
+    "soldCount": 9
+  },
+  {
+    "name": "Olay Active Hydrating Cream Moisturizer",
+    "normal_price": 48.9,
+    "sale_price": 9.78,
+    "image": "olay_active_hydrating_cream.png",
+    "brand": "Olay",
+    "ingredients": ["Glycerin", "Niacinamide"],
+    "skin_concerns": ["Dry Skin", "Wrinkles"],
+    "soldCount": 14
+  },
+  {
+    "name": "L'Oreal Paris Hydra-Renewal Face Cream",
+    "normal_price": 57.4,
+    "sale_price": 11.48,
+    "image": "loreal_hydra_renewal_face_cream.png",
+    "brand": "L'Oreal Paris",
+    "ingredients": ["Hyaluronic acid", "Vitamin C"],
+    "skin_concerns": ["Dark Spots", "Melasma"],
+    "soldCount": 20
+  },
+  {
+    "name": "E.l.f. Skin Holy Hydration Moisturizer",
+    "normal_price": 37.8,
+    "sale_price": 7.56,
+    "image": "elf_skin_holy_hydration.png",
+    "brand": "E.l.f.",
+    "ingredients": ["Hyaluronic acid", "Green Tea"],
+    "skin_concerns": ["Dry Skin", "Wrinkles"],
+    "soldCount": 8
+  },
+  {
+    "name": "Wrinkle Retinol Regenerating Face Cream",
+    "normal_price": 71.2,
+    "sale_price": 14.24,
+    "image": "wrinkle_retinol_regenerating.png",
+    "brand": "The Ordinary",
+    "ingredients": ["Retinol", "Hyaluronic acid"],
+    "skin_concerns": ["Wrinkles", "Dark Spots"],
+    "soldCount": 17
+  },
+  {
+    "name": "Cosrx Snail Mucin 92% Moisturizer",
+    "normal_price": 44.6,
+    "sale_price": 8.92,
+    "image": "cosrx_snail_mucin_92.png",
+    "brand": "Cosrx",
+    "ingredients": ["Snail Mucin", "Hyaluronic acid"],
+    "skin_concerns": ["Acne", "Hyperpigmentation"],
+    "soldCount": 11
+  },
+  {
+    "name": "Derma Pure Revitalizing Face Cream",
+    "normal_price": 78.3,
+    "sale_price": 15.66,
+    "image": "derma_pure_revitalizing.png",
+    "brand": "Naturium",
+    "ingredients": ["Vitamin C", "Hyaluronic acid"],
+    "skin_concerns": ["Dark Spots", "Hyperpigmentation"],
+    "soldCount": 25
+  }
+]

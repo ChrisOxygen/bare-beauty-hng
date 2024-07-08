@@ -1,0 +1,33 @@
+.category-page {
+    width: 100%;
+}
+
+.cp-product-list-block {
+    width: 100%;
+}
+
+.cp-product-list-wrapper {
+    width: 100%;
+
+    .cp-product-list {
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+        margin: 160px 0;
+
+        @media only screen and (max-width: 960px) {
+
+            gap: 120px;
+            margin: 120px 0;
+
+        }
+
+        @media only screen and (max-width: 960px) {
+
+            gap: 120px;
+            margin: 64px 0;
+
+        }
+    }
+
+}

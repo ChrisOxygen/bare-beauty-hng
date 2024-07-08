@@ -1,0 +1,105 @@
+.single-product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    &:hover {
+        .product-actions {
+            display: flex;
+        }
+
+    }
+}
+
+.image-section {
+    background: #F7FBFA;
+    display: grid;
+    place-items: center;
+    padding: 91px 64px;
+
+    max-width: 397.333px;
+    width: 100%;
+
+    position: relative;
+
+    &__img {
+        width: 100%;
+    }
+}
+
+.product-actions {
+    display: none;
+
+    position: absolute;
+
+    gap: 16px;
+    background: rgba(103, 111, 84, 0.856);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: end;
+    padding: 64px 0;
+
+
+    &__action {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+
+        border-radius: 100px;
+        background: #F7FBFA;
+
+        font-size: 25px;
+        color: #BDE4A8;
+    }
+}
+
+.details-section {
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.product-title {
+    color: var(--Text, #1F1919);
+
+    /* Lato/Subheading: Regular */
+    font-family: "Lato";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &__normal-price {
+        color: var(--Grey, #A0A0A0);
+        font-family: Lato;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration-line: strikethrough;
+    }
+
+    &__sale-price {
+        color: #535944;
+
+        /* Lato/Title: Bold */
+        font-family: Lato;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+}
