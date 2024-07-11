@@ -28,6 +28,13 @@
         padding: 124px 0;
         z-index: 2;
         position: relative;
+
+        @media only screen and (max-width: 656px) {
+
+            padding: 79px 0;
+
+
+        }
     }
 
 
@@ -58,6 +65,13 @@
 .breadcrumb-list {
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 996px) {
+
+        display: none;
+
+
+    }
 
 
     &__item {
@@ -97,6 +111,41 @@
     }
 
     &__icon {}
+}
+
+.mobile-breadcrumb-block {
+    background: var(--Background, #FCFCFC);
+    display: none;
+
+    @media only screen and (max-width: 996px) {
+
+        display: block;
+
+
+    }
+
+
+
+    &__content-area {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+
+        z-index: 2;
+        position: relative;
+
+
+        .breadcrumb-list {
+            @media only screen and (max-width: 996px) {
+
+                display: flex;
+
+
+            }
+        }
+    }
+
+
 }
 
 

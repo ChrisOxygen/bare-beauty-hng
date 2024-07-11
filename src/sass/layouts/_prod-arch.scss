@@ -5,4 +5,19 @@
 
     margin-top: 10px;
     margin-bottom: 100px;
+
+    @media only screen and (max-width: 996px) {
+
+        grid-template-columns: repeat(2, 1fr);
+
+
+    }
+
+    @media only screen and (max-width: 400px) {
+
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+
+    }
 }

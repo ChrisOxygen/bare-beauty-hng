@@ -7,10 +7,26 @@
 }
 
 .top-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     height: 100px;
+    display: grid;
+    grid-template-columns: minmax(200px, 400px) 400px minmax(200px, 400px);
+    align-items: center;
+
+    @media only screen and (max-width: 996px) {
+
+        grid-template-columns: minmax(100px, 150px) 400px minmax(100px, 150px);
+        justify-content: space-between;
+
+
+    }
+
+    @media only screen and (max-width: 656px) {
+
+        grid-template-columns: 100px 130px 100px;
+
+
+    }
 }
 
 
@@ -21,7 +37,17 @@
     border-bottom: 0.5px solid #C3C3C3;
     height: 48px;
     gap: 10px;
-    width: 397px;
+    width: 100%;
+    max-width: 397px;
+
+    justify-self: start;
+
+    @media only screen and (max-width: 996px) {
+
+        display: none;
+
+
+    }
 
 
 
@@ -51,8 +77,31 @@
     }
 }
 
+.mobile-menu-search-box {
+    align-items: center;
+    gap: 16px;
+    justify-self: start;
+
+    display: none;
+
+    @media only screen and (max-width: 996px) {
+        display: flex;
+
+
+
+    }
+}
+
 .logo-box {
     width: 178px;
+    justify-self: center;
+
+    @media only screen and (max-width: 656px) {
+
+        width: 100%;
+
+
+    }
 
     img {
         width: 100%;
@@ -64,7 +113,21 @@
     align-items: center;
     gap: 40px;
     justify-content: space-between;
-    width: 297px;
+    max-width: 297px;
+    width: 100%;
+    justify-self: end;
+
+    @media only screen and (max-width: 996px) {
+
+
+        gap: 16px;
+        max-width: 100%;
+        width: 100%;
+        justify-self: end;
+
+
+
+    }
 
 }
 
@@ -74,7 +137,32 @@
     align-items: center;
     gap: 16px;
 
-    &__item {}
+    @media only screen and (max-width: 996px) {
+
+
+
+        max-width: 100%;
+        width: 100%;
+        justify-content: end;
+
+
+    }
+
+
+
+    &__item {
+        display: grid;
+        place-items: center;
+
+        &--wishlist {
+            @media only screen and (max-width: 996px) {
+
+                display: none;
+
+
+            }
+        }
+    }
 
     &__link {}
 
@@ -94,6 +182,14 @@
         padding: 8px;
         align-items: center;
         gap: 8px;
+    }
+
+    @media only screen and (max-width: 996px) {
+
+        display: none;
+        width: 0;
+
+
     }
 }
 
@@ -124,6 +220,13 @@
     display: flex;
     width: 100%;
     justify-content: center;
+
+    @media only screen and (max-width: 996px) {
+
+        display: none;
+
+
+    }
 }
 
 .nav-menu-list {

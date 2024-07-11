@@ -11,6 +11,8 @@ import {
 import { LuChevronDown, LuX } from "react-icons/lu";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { useEffect, useRef, useState } from "react";
+import { useViewport } from "react-viewport-hooks";
+import { ScreenType } from "../layouts/ProductArch";
 
 type FilterProps = {
   type: FilterTypes;
@@ -25,34 +27,21 @@ type FilterItemProps = {
   ) => void;
 };
 
-// const brands = ["Cosrx", "Minon", "Hada Labo", "Cerave", "The Ordinary"];
-// const ingredients = [
-//   "Birch Sap",
-//   "Hyaluronic acid",
-//   "Niacinamide",
-//   "Ceramides",
-//   "Glycerin",
-//   "Propolis",
-//   "Green Tea",
-//   "Snail Mucin",
-//   "Vitamin C",
-//   "Centella Asiatica",
-//   "Retinol",
-// ];
-// const skinConcerns = [
-//   "Dry Skin",
-//   "Wrinkles",
-//   "Acne",
-//   "Hyperpigmentation",
-//   "Dark Spots",
-//   "Melasma",
-// ];
-
 function Filter({ type }: FilterProps) {
   const filters = useAppSelector((state) => state.productsData.filters);
   const dispatch = useAppDispatch();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<null | HTMLDivElement>(null);
+
+  const { vw } = useViewport();
+  const [screen, setScreen] = useState<ScreenType>(
+    ((vw) => {
+      if (vw < 620) return "mobile";
+      if (vw < 996) return "tablet";
+      return "desktop";
+    })(vw)
+  );
+
   let filterList: { name: string; active: boolean }[];
 
   switch (type) {
@@ -69,26 +58,35 @@ function Filter({ type }: FilterProps) {
       filterList = filters.brandList;
   }
 
-  console.log(filterList);
-
   const handleItemClick = (
     filterType: FilterTypes,
     item: { name: string; active: boolean }
   ) => {
-    console.log("clicked", item);
     if (filterType === "brands") {
       dispatch(toggleBrandFilter(item.name as Brand));
-      dispatch(filterProducts());
+      if (screen === "desktop") {
+        dispatch(filterProducts());
+      }
     }
     if (filterType === "ingredients") {
       dispatch(toggleIngredientFilter(item.name as Ingredient));
-      dispatch(filterProducts());
+      if (screen === "desktop") {
+        dispatch(filterProducts());
+      }
     }
     if (filterType === "skinConcerns") {
       dispatch(toggleSkinConcernFilter(item.name as SkinConcerns));
-      dispatch(filterProducts());
+      if (screen === "desktop") {
+        dispatch(filterProducts());
+      }
     }
   };
+
+  useEffect(() => {
+    if (vw < 620) return setScreen("mobile");
+    else if (vw < 996) return setScreen("tablet");
+    else setScreen("desktop");
+  }, [vw]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -127,6 +125,40 @@ function Filter({ type }: FilterProps) {
         return "Brands";
     }
   };
+
+  if (screen !== "desktop") {
+    return (
+      <div className="mb-filter-box" ref={dropdownRef}>
+        <button
+          className="mb-filter-box-display"
+          onClick={() => toggleDropdown()}
+        >
+          <span className="mb-filter-box-display__filter-title">
+            {filterTitle()}
+          </span>
+          <span
+            className={`mb-filter-box-display__toggle-icon ${
+              dropdownOpen ? "mb-filter-box-display__toggle-icon--open" : ""
+            }`}
+          >
+            <LuChevronDown />
+          </span>
+        </button>
+        {dropdownOpen && (
+          <ul className="mb-filter-list">
+            {filterList.map((item, index) => (
+              <FilterItem
+                key={index}
+                item={item}
+                filterType={type}
+                handleItemClick={handleItemClick}
+              />
+            ))}
+          </ul>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="filter-box" ref={dropdownRef}>

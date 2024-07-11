@@ -1,0 +1,42 @@
+.count-filter-box {
+
+    position: relative;
+}
+
+
+.count-filter-list {
+
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+    padding: 10px;
+    max-width: 155px;
+    width: 100%;
+
+    top: 96px;
+    left: 1px;padding: 40px;
+    gap: 24px;
+    flex-shrink: 0;
+    align-self: stretch;
+    flex-wrap: wrap;
+
+
+    background: #FFF;
+
+    z-index: 5;
+
+    &__item {
+        color: var(--Text, #1F1919);
+
+        /* Lato/Body: Regular */
+        font-family: Lato;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__item-btn {}
+}

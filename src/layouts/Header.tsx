@@ -1,6 +1,8 @@
 import { CiHeart, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
-import { GoChevronDown } from "react-icons/go";
+import { GoChevronDown, GoSearch } from "react-icons/go";
+
 import { Link } from "react-router-dom";
+import MobileMenu from "../components/MobileMenu";
 
 function Header() {
   return (
@@ -19,6 +21,29 @@ function Header() {
               placeholder="Search"
             />
           </div>
+          <div className="mobile-menu-search-box">
+            <ul className="icon-links-list">
+              <li className="icon-links-list__item">
+                <MobileMenu />
+              </li>
+              <li className="icon-links-list__item icon-links-list__item">
+                <Link to="/" className="icon-links-list__link">
+                  <span className="icon-links-list__icon">
+                    <GoSearch />
+                  </span>
+                </Link>
+              </li>
+            </ul>
+            <div className="language-selector">
+              <div className="language-selector__selected">
+                <img src="assets/EN-flag.png" alt="" className="lang-flag" />
+                <span className="lang-code">EN</span>
+                <span className="dropdown-icon">
+                  <GoChevronDown />
+                </span>
+              </div>
+            </div>
+          </div>
           <div className="logo-box">
             <img
               src="/assets/BareBeauty-logo.svg"
@@ -35,7 +60,7 @@ function Header() {
                   </span>
                 </Link>
               </li>
-              <li className="icon-links-list__item">
+              <li className="icon-links-list__item icon-links-list__item--wishlist">
                 <Link to="/" className="icon-links-list__link">
                   <span className="icon-links-list__icon">
                     <CiHeart />

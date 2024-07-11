@@ -23,6 +23,13 @@
 
     position: relative;
 
+    @media only screen and (max-width: 996px) {
+
+        max-width: 597.333px;
+
+
+    }
+
     &__img {
         width: 100%;
     }
@@ -88,7 +95,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-        text-decoration-line: strikethrough;
+        text-decoration: line-through;
     }
 
     &__sale-price {

@@ -313,6 +313,20 @@ const productsSlice = createSlice({
         return item;
       });
     },
+
+    setPriceFilterMax: (state) => {
+      const productMaxPrice = state.products.reduce((max, product) => {
+        return product.sale_price > max ? product.sale_price : max;
+      }, 0);
+
+      state.filters.price.max = productMaxPrice;
+    },
+    setPriceFilter: (
+      state,
+      action: PayloadAction<{ min: number; max: number }>
+    ) => {
+      state.filters.price = action.payload;
+    },
   },
 });
 
@@ -330,4 +344,6 @@ export const {
   clearCart,
   increaseQuantity,
   decreaseQuantity,
+  setPriceFilterMax,
+  setPriceFilter,
 } = productsSlice.actions;

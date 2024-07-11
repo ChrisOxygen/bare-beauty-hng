@@ -5,6 +5,13 @@
     align-items: flex-start;
     gap: 32px;
 
+    @media only screen and (max-width: 996px) {
+
+        display: none;
+
+
+    }
+
     &__header-sect {
         display: flex;
         justify-content: space-between;
@@ -120,10 +127,25 @@
     align-self: stretch;
     flex-wrap: wrap;
 
-    border: 1px solid red;
+
     background: #FFF;
 
     z-index: 5;
+
+    &--price {
+        right: unset;
+        left: 1px;
+        width: 395px;
+        height: 200px;
+
+        @media only screen and (max-width: 996px) {
+
+            width: 100%;
+
+
+        }
+
+    }
 
     &__item {
         display: inline-flex;
@@ -166,6 +188,13 @@
     width: 100%;
 
     margin-bottom: 28px;
+
+    @media only screen and (max-width: 996px) {
+
+        display: none;
+
+
+    }
 }
 
 .prod-per-page-filter {

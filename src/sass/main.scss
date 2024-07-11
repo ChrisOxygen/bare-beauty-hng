@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
 @import './base/base';
 @import './base/utils';
 
@@ -5,8 +12,13 @@
 @import './layouts/footer';
 @import './layouts/prod-arch';
 @import './layouts/breadcrumb-block';
+@import './layouts/mobile-filters';
 
 
 @import './components/filters';
 @import './components/toasts';
 @import './components/single-product-box';
+@import './components/cost-slider';
+@import './components/pagination';
+@import './components/count-filter';
+@import './components/mobile-menu';
