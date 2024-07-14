@@ -40,6 +40,11 @@ function ProductCountFilter({
     setDropdownOpen(!dropdownOpen);
   };
 
+  const onPageCountSelection = (count: number) => {
+    handleProdPerPageSelection(count);
+    setDropdownOpen(false);
+  };
+
   return (
     <div className="filter-box count-filter-box" ref={dropdownRef}>
       <button className="filter-box-display" onClick={() => toggleDropdown()}>
@@ -59,7 +64,7 @@ function ProductCountFilter({
               <button
                 className="count-filter-list__item-btn"
                 onClick={() => {
-                  handleProdPerPageSelection(count.number);
+                  onPageCountSelection(count.number);
                 }}
               >
                 {count.number}

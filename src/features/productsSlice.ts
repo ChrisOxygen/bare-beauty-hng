@@ -57,6 +57,14 @@ const initialState = {
   products: products as Product[],
   filteredProducts: products as Product[],
   cart: [] as CartItem[],
+  wishList: [] as Product[],
+  checkoutBag: {
+    subTotal: 0,
+    shipping: 0,
+    vat: 0,
+    total: 0,
+    readyToCheckout: false,
+  },
 
   filters: {
     brandList: [
@@ -286,14 +294,17 @@ const productsSlice = createSlice({
 
     addToCart: (state, action: PayloadAction<CartItem>) => {
       state.cart.push(action.payload);
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeFromCart: (state, action: PayloadAction<CartItem>) => {
       state.cart = state.cart.filter(
         (item) => item.product.name !== action.payload.product.name
       );
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     clearCart: (state) => {
       state.cart = [];
+      localStorage.setItem("cart", JSON.stringify([]));
     },
     increaseQuantity: (state, action: PayloadAction<CartItem>) => {
       state.cart = state.cart.map((item) => {
@@ -302,6 +313,7 @@ const productsSlice = createSlice({
         }
         return item;
       });
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     decreaseQuantity: (state, action: PayloadAction<CartItem>) => {
       state.cart = state.cart.map((item) => {
@@ -312,6 +324,20 @@ const productsSlice = createSlice({
         }
         return item;
       });
+      localStorage.setItem("cart", JSON.stringify(state.cart));
+    },
+    updateCartItemQuantity: (state, action: PayloadAction<CartItem>) => {
+      state.cart = state.cart.map((item) => {
+        if (item.product.name === action.payload.product.name) {
+          return { ...item, quantity: action.payload.quantity };
+        }
+        return item;
+      });
+    },
+    getLocalCart: (state) => {
+      console.log("getting local cart");
+
+      state.cart = JSON.parse(localStorage.getItem("cart") || "[]");
     },
 
     setPriceFilterMax: (state) => {
@@ -326,6 +352,36 @@ const productsSlice = createSlice({
       action: PayloadAction<{ min: number; max: number }>
     ) => {
       state.filters.price = action.payload;
+    },
+    addToWishList: (state, action: PayloadAction<Product>) => {
+      state.wishList.push(action.payload);
+    },
+    removeFromWishList: (state, action: PayloadAction<Product>) => {
+      state.wishList = state.wishList.filter(
+        (product) => product.name !== action.payload.name
+      );
+    },
+    initiateCheckout: (
+      state,
+      action: PayloadAction<{ subTotal: number; vat: number; total: number }>
+    ) => {
+      state.checkoutBag = {
+        ...state.checkoutBag,
+        subTotal: action.payload.subTotal,
+        vat: action.payload.vat,
+        total: action.payload.total,
+        readyToCheckout: true,
+      };
+    },
+
+    clearCheckout: (state) => {
+      state.checkoutBag = {
+        subTotal: 0,
+        shipping: 0,
+        vat: 0,
+        total: 0,
+        readyToCheckout: false,
+      };
     },
   },
 });
@@ -346,4 +402,10 @@ export const {
   decreaseQuantity,
   setPriceFilterMax,
   setPriceFilter,
+  addToWishList,
+  removeFromWishList,
+  updateCartItemQuantity,
+  initiateCheckout,
+  clearCheckout,
+  getLocalCart,
 } = productsSlice.actions;

@@ -220,6 +220,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    border-top: 0.5px solid #EDFFD9;
 
     @media only screen and (max-width: 996px) {
 
@@ -238,7 +239,7 @@
     align-items: center;
     gap: 100px;
 
-    border-top: 0.5px solid #EDFFD9;
+
 
     &__item {
         color: var(--Text, #1F1919);

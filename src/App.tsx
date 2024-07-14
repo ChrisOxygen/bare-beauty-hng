@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import FaceMoisturizers from "./pages/FaceMoisturizers";
+import CartPage from "./pages/CartPage";
+import Checkout from "./sass/pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -10,18 +12,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <FaceMoisturizers />,
       },
-      // {
-      //   path: "/:category",
-      //   element: <CategoryPage />,
-      // },
-      // {
-      //   path: "/product/:slug",
-      //   element: <SingleProduct />,
-      // },
-      // {
-      //   path: "/checkout",
-      //   element: <Checkout />,
-      // },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
     ],
   },
 ]);

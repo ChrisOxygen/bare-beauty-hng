@@ -1,10 +1,11 @@
 .cart-action-toast {
     display: flex;
-    padding: 8px 24px;
+    padding: 8px 20px;
     align-items: center;
 
     border-radius: 4px;
     background: #F7FBFA;
+    border: 1px solid #BDE4A8;
 
     &__details {
         display: flex;
@@ -19,7 +20,8 @@
     &__close-container {
         display: flex;
         width: 48px;
-        padding: 12px 16px;
+        padding: 12px 0;
+        margin-left: 10px;
         justify-content: center;
         align-items: center;
         gap: 8px;
@@ -27,7 +29,7 @@
 
     &__close-btn {
         color: #BDE4A8;
-        font-size: 34px;
+        font-size: 30px;
     }
 
 }
@@ -64,6 +66,16 @@
 .cart-msg-btn {
     display: flex;
     align-items: center;
+    margin-right: 10px;
+
+    @media only screen and (max-width: 600px) {
+
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 10px;
+
+
+    }
 
 }
 
@@ -85,4 +97,11 @@
     gap: 8px;
 
     color: #79B4A9;
+
+    @media only screen and (max-width: 600px) {
+
+        padding: 4px 0;
+
+
+    }
 }
