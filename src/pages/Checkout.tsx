@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import ShippingMethodSelector from "../../components/ShippingMethodSelector";
+import ShippingMethodSelector from "../components/ShippingMethodSelector";
 
 function Checkout() {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
   return (
     <div className="checkout-page block">
       <div className="box-container">
@@ -48,7 +51,7 @@ function Checkout() {
                   </span>
                 </div>
                 <div className="shipping-section__form-container">
-                  <form className="checkout-form">
+                  <form className="checkout-form" onSubmit={handleFormSubmit}>
                     <div className="shipping-info-block">
                       <div className="input-row input-row__single">
                         <div className="input-box">
