@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks";
+import { useState } from "react";
+import { useAppSelector } from "../hooks";
 import BreadCrumbSect from "../layouts/BreadCrumbSect";
 import ProductArch from "../layouts/ProductArch";
 import ProdArchPagination from "../components/ProdArchPagination";
-import { getLocalCart } from "../features/productsSlice";
 
 export default function FaceMoisturizers() {
   const [currentPage, setCurrentPage] = useState(1);
